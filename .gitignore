@@ -1,6 +1,5 @@
 # Project-specific ignores
 chromedriver*
-selenium-server*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

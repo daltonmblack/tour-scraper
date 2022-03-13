@@ -1,8 +1,12 @@
+import os
+
 import click
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-WEBDRIVER_PATH = 'C:\\Users\\dalto\\projects\\tour-scraper\\chromedriver.exe'
+load_dotenv()
+WEBDRIVER_PATH=os.getenv('WEBDRIVER_PATH')
 
 class Band:
   def __init__(self, band, tour_page_url, selenium_driver):
