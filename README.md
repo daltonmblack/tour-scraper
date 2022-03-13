@@ -5,8 +5,9 @@ Web scraper that aggregates tour dates in desired cities
 
 ### Basic Project Setup
 
-* Validate that your Python version is >=3.5 via `python -V`
+* Validate that Python 3.8 is installed via `python -V`
   * If you have both Python 2 and Python 3 installed, you will need to use `python3` in place of `python` in the commands below
+  * If Python 3.8 isn't installed anywhere on your system, one option is to install it using `pyenv`: https://realpython.com/intro-to-pyenv/
 * Install `pipenv`:
 ```bash
 python -m pip install --user pipenv
