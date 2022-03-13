@@ -1,8 +1,8 @@
+import click
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 WEBDRIVER_PATH = 'C:\\Users\\dalto\\projects\\tour-scraper\\chromedriver.exe'
-
 
 class Band:
   def __init__(self, band, tour_page_url, selenium_driver):
@@ -58,7 +58,11 @@ class Concert:
 def find_concerts(band, state):
   return band.find_concert(state)
 
-def main():
+@click.command()
+@click.option('--state', default='WA', help='US state to search for concerts in')
+def main(state):
+  print(f"Searching for concerts in state: {state}")
+
   driver = webdriver.Chrome(WEBDRIVER_PATH) 
 
   jinjer = Band("Jinjer", "http://jinjer-metal.com/tour", driver)
@@ -68,7 +72,6 @@ def main():
 
   print()
 
-  state = "WA"
   concert = jinjer.find_concert(state)
   if concert:
     print(f"Found concert in {state}: {concert}")
